@@ -12,7 +12,7 @@ released as part of this repository are
 ## Quickstart
 
 Our training setup is heavily config driven. Our main config can be found in
-`alphastar/configs/alphastar_supervised.py`. Run all these commands from the
+`alphastar/unplugged/configs/alphastar_supervised.py`. Run all these commands from the
 root directory where the package is downloaded into.
 
 ### Train with dummy data (for debugging)

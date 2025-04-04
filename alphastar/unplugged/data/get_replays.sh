@@ -16,13 +16,24 @@
 # Script for downloading Starcraft II replay datasets.
 #
 
-readonly DOWNLOADS_DIR=/tmp/starcraft2_replay_downloads
+# Mod by Tim: 
+# readonly DOWNLOADS_DIR=/tmp/starcraft2_replay_downloads
+readonly DOWNLOADS_DIR=/mnt/Data2/workspace/AlphaStar/starcraft2_replay_downloads
+
 readonly S2CLIENT_GIT_REPO=https://github.com/Blizzard/s2client-proto.git
-readonly S2CLIENT_TEMP_REPO_DIR=/tmp/s2client
+
+# Mod by Tim: 
+# readonly S2CLIENT_TEMP_REPO_DIR=/tmp/s2client
+readonly S2CLIENT_TEMP_REPO_DIR=/mnt/Data2/workspace/AlphaStar/s2client
+
 readonly TEST_CSV_URL=https://storage.cloud.google.com/dm-starcraft-offline-datasets/offline-test.csv
 readonly TRAIN_CSV_URL=https://storage.cloud.google.com/dm-starcraft-offline-datasets/offline-train.csv
 readonly DEBUG_CSV_URL=https://storage.cloud.google.com/dm-starcraft-offline-datasets/offline-debug.csv
-readonly VENV_DIR=/tmp/alphastar_unplugged_get_data_venv
+
+# Mod by Tim: 
+# readonly VENV_DIR=/tmp/alphastar_unplugged_get_data_venv
+readonly VENV_DIR=/mnt/Data2/workspace/AlphaStar/alphastar_unplugged_get_data_venv
+
 readonly DEBUG_VERSION='4.9.2'
 
 function get_user_config {
@@ -166,7 +177,7 @@ function download_replays {
   csv_path=$1
   version=$2
   dataset_type=$3
-  echo "Downloading ${dataset_type} replays in ${csv_path} for version ${version}"
+  echo "PWD is ${PWD} -  Downloading ${dataset_type} replays in ${csv_path} for version ${version}"
   python download_replays.py \
     --key=${client_id}  \
     --secret=${secret}  \
